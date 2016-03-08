@@ -3,7 +3,7 @@ MAINTAINER Steve Easley <steve.easley@gmail.com>
 
 RUN yum update -y && \
     yum install -y epel-release && \
-    sudo rpm --nosignature -i https://repo.varnish-cache.org/redhat/varnish-4.0.el6.rpm && \
+    rpm --nosignature -i https://repo.varnish-cache.org/redhat/varnish-4.0.el6.rpm && \
     yum install -y varnish && \
     yum clean all
 
