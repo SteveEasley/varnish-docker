@@ -23,13 +23,20 @@ where `some-varnish` is the name you want to assign to your container and `tag` 
 
 ## Using your own VCL configuration file
 
-The easiest way to use your own configuration file is to create your own Docker image based on this image. For example, add this to your own Dockerfile:
+The easiest way to use your own configuration file is to create your own Docker image based on this image. For example, create a new directory called `varnish` and inside it add the following to a file called `Dockerfile`:
 
 ```shell
 FROM steveeasley/varnish:4.0
-
 COPY default.vcl /etc/varnish
 ```
+
+then cd to that directory and run:
+
+```shell
+$ docker build --name my-varnish .
+$ docker run --name some-varnish -d my-varnish
+```
+
 
 ## Example troubleshooting commands
 
