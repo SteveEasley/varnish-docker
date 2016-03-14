@@ -9,7 +9,7 @@ RUN yum update -y && \
 
 EXPOSE 80 6082
 
-COPY docker-entrypoint.sh /
+COPY entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
 
